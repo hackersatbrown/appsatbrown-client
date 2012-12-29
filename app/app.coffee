@@ -18,12 +18,12 @@ App.config([
 
   $routeProvider
 
-    .when('/todo', {templateUrl: '/partials/todo.html'})
+    .when('/app', {templateUrl: '/partials/app.html'})
     .when('/view1', {templateUrl: '/partials/partial1.html'})
     .when('/view2', {templateUrl: '/partials/partial2.html'})
 
     # Catch all
-    .otherwise({redirectTo: '/todo'})
+    .otherwise({redirectTo: '/app'})
 
   # Without server side support html5 must be disabled.
   $locationProvider.html5Mode(false)
