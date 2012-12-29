@@ -40,11 +40,11 @@ angular.module('app.controllers', [])
 ($scope) ->
 
   $scope.apps = [
-    text: "learn angular"
-    done: true
+    name: "Convos"
+    description: "Sketchy phone app."
   ,
-    text: "build an angular app"
-    done: false
+    name: "Best of Brown"
+    description: "App for finding good courses"
   ]
 ])
 

@@ -4,5 +4,4 @@ div(ng-app='ng-app')
     ul.unstyled
       li(ng-repeat='app in apps')
         label(class='checkbox inline')
-          input(type='checkbox', ng-model='app.done')
-          span(class='done{{app.done}}') {{app.text}} bobby sue
+          {{app.name}} - {{app.description}}

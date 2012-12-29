@@ -4,9 +4,7 @@
   <div ng-controller="AppCtrl">
     <ul class="unstyled">
       <li ng-repeat="app in apps">
-        <label class="checkbox inline">
-          <input type="checkbox" ng-model="app.done"/><span class="done{{app.done}}">{{app.text}} bobby sue</span>
-        </label>
+        <label class="checkbox inline">{{app.name}} - {{app.description}}</label>
       </li>
     </ul>
   </div>
