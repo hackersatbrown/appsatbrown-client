@@ -28,3 +28,14 @@ App.config([
   # Without server side support html5 must be disabled.
   $locationProvider.html5Mode(false)
 ])
+
+### Fake Backend for Testing ###
+App.config(($provide) ->
+  $provide.decorator('$httpBackend', angular.mock.e2e.$httpBackendDecorator)
+)
+
+# Define our fake backend.
+App.run(($httpBackend) ->
+  # TODO: Mock backend.
+  $httpBackend.whenGET().passThrough()
+)
