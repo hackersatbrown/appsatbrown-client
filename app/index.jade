@@ -32,8 +32,11 @@ html(lang='en')
             a(href='/').brand Apps at Brown
             .nav-collapse
               div(ng-include="'/partials/nav.html'")
-      .container.main-content
-        div(ng-view)
+      .container-fluid.main-content
+        .row-fluid
+          .span3
+          .span9.well
+            div(ng-view)
       .push
 
     footer.footer
