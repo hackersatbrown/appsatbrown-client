@@ -8,6 +8,7 @@ build.xml
 .idea/*
 
 _public
+app/assets/partials/*
 node_modules/*
 npm-debug.log
 

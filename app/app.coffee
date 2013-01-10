@@ -18,12 +18,12 @@ App.config([
 
   $routeProvider
 
-    .when('/app', {templateUrl: '/partials/app.html'})
+    .when('/apps', {templateUrl: '/partials/apps.html'})
     .when('/apps/:appId', {templateUrl: 'partials/app-detail.html'})
-    .when('/view1', {templateUrl: '/partials/developer.html'})
+    .when('/developer', {templateUrl: '/partials/developer.html'})
 
     # Catch all
-    .otherwise({redirectTo: '/app'})
+    .otherwise({redirectTo: '/apps'})
 
   # Without server side support html5 must be disabled.
   $locationProvider.html5Mode(false)
@@ -45,9 +45,9 @@ App.run(($httpBackend) ->
     name: "Best of Brown"
     description: "App for finding good courses"
   ]
-  $httpBackend.whenGET('apps/apps.json').respond(apps)
-  $httpBackend.whenGET('apps/0.json').respond(apps[0])
-  $httpBackend.whenGET('apps/1.json').respond(apps[1])
+  $httpBackend.whenGET('apps/apps').respond(apps)
+  $httpBackend.whenGET('apps/0').respond(apps[0])
+  $httpBackend.whenGET('apps/1').respond(apps[1])
   # TODO: Mock backend.
   $httpBackend.whenGET().passThrough()
 )
