@@ -35,16 +35,19 @@ angular.module('app.controllers', [])
 ])
 
 .controller('AppCtrl', [
-  '$scope'
+  '$scope',
+  'App'
 
-($scope) ->
-
-  $scope.apps = [
-    name: "Convos"
-    description: "Sketchy phone app."
-  ,
-    name: "Best of Brown"
-    description: "App for finding good courses"
-  ]
+($scope, App) ->
+  $scope.apps = App.query()
 ])
 
+.controller('AppDetailCtrl', [
+  '$scope',
+  '$routeParams',
+  'App',
+($scope, $routeParams, App) ->
+  $scope.app = App.get({appId: $routeParams.appId}, (app) ->
+    $scope.app = app
+  )
+])
