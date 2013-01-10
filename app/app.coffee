@@ -19,6 +19,7 @@ App.config([
   $routeProvider
 
     .when('/app', {templateUrl: '/partials/app.html'})
+    .when('/apps/:appId', {templateUrl: 'partials/app-detail.html'})
     .when('/view1', {templateUrl: '/partials/partial1.html'})
     .when('/view2', {templateUrl: '/partials/partial2.html'})
 
@@ -37,14 +38,17 @@ App.config(($provide) ->
 # Define our fake backend.
 App.run(($httpBackend) ->
   apps = [
+    id: 0
     name: "Convos"
     description: "Sketchy phone app."
   ,
+    id: 1
     name: "Best of Brown"
     description: "App for finding good courses"
   ]
   $httpBackend.whenGET('apps/apps.json').respond(apps)
-  
+  $httpBackend.whenGET('apps/0.json').respond(apps[0])
+  $httpBackend.whenGET('apps/1.json').respond(apps[1])
   # TODO: Mock backend.
   $httpBackend.whenGET().passThrough()
 )

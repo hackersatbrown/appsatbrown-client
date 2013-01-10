@@ -42,3 +42,12 @@ angular.module('app.controllers', [])
   $scope.apps = App.query()
 ])
 
+.controller('AppDetailCtrl', [
+  '$scope',
+  '$routeParams',
+  'App',
+($scope, $routeParams, App) ->
+  $scope.app = App.get({appId: $routeParams.appId}, (app) ->
+    $scope.app = app
+  )
+])
