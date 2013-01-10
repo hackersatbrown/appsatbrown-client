@@ -49,6 +49,7 @@ App.run(($httpBackend) ->
     id: 0
     name: "Devin Finzer"
     email: "dfinzer2@gmail.com"
+    apps: apps
   }
   $httpBackend.whenGET('apps/apps').respond(apps)
   $httpBackend.whenGET('apps/0').respond(apps[0])

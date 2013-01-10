@@ -34,7 +34,7 @@ angular.module('app.controllers', [])
       return ''
 ])
 
-.controller('AppCtrl', [
+.controller('AppsCtrl', [
   '$scope',
   'App',
   
