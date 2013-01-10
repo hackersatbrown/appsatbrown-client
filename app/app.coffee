@@ -18,13 +18,13 @@ App.config([
 
   $routeProvider
 
-    .when('/app', {templateUrl: '/partials/app.html'})
+    .when('/apps', {templateUrl: '/partials/apps.html'})
     .when('/apps/:appId', {templateUrl: 'partials/app-detail.html'})
     .when('/view1', {templateUrl: '/partials/partial1.html'})
     .when('/view2', {templateUrl: '/partials/partial2.html'})
 
     # Catch all
-    .otherwise({redirectTo: '/app'})
+    .otherwise({redirectTo: '/apps'})
 
   # Without server side support html5 must be disabled.
   $locationProvider.html5Mode(false)
