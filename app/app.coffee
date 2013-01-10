@@ -36,6 +36,15 @@ App.config(($provide) ->
 
 # Define our fake backend.
 App.run(($httpBackend) ->
+  apps = [
+    name: "Convos"
+    description: "Sketchy phone app."
+  ,
+    name: "Best of Brown"
+    description: "App for finding good courses"
+  ]
+  $httpBackend.whenGET('apps/apps.json').respond(apps)
+  
   # TODO: Mock backend.
   $httpBackend.whenGET().passThrough()
 )
