@@ -20,8 +20,7 @@ App.config([
 
     .when('/app', {templateUrl: '/partials/app.html'})
     .when('/apps/:appId', {templateUrl: 'partials/app-detail.html'})
-    .when('/view1', {templateUrl: '/partials/partial1.html'})
-    .when('/view2', {templateUrl: '/partials/partial2.html'})
+    .when('/view1', {templateUrl: '/partials/developer.html'})
 
     # Catch all
     .otherwise({redirectTo: '/app'})
