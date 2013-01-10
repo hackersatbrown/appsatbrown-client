@@ -36,8 +36,8 @@ angular.module('app.controllers', [])
 
 .controller('AppCtrl', [
   '$scope',
-  'App'
-
+  'App',
+  
 ($scope, App) ->
   $scope.apps = App.query()
 ])
@@ -49,5 +49,15 @@ angular.module('app.controllers', [])
 ($scope, $routeParams, App) ->
   $scope.app = App.get({appId: $routeParams.appId}, (app) ->
     $scope.app = app
+  )
+])
+
+.controller('DeveloperProfileCtrl', [
+  '$scope',
+  '$routeParams',
+  'User',
+($scope, $routeParams, User) ->
+  $scope.user = User.get({userId: $routeParams.userId}, (user) ->
+    $scope.user = user
   )
 ])

@@ -19,8 +19,8 @@ App.config([
   $routeProvider
 
     .when('/apps', {templateUrl: '/partials/apps.html'})
-    .when('/apps/:appId', {templateUrl: 'partials/app-detail.html'})
-    .when('/developer', {templateUrl: '/partials/developer.html'})
+    .when('/apps/:appId', {templateUrl: '/partials/app-detail.html'})
+    .when('/developer/:userId', {templateUrl: '/partials/developer.html'})
 
     # Catch all
     .otherwise({redirectTo: '/apps'})
@@ -45,9 +45,14 @@ App.run(($httpBackend) ->
     name: "Best of Brown"
     description: "App for finding good courses"
   ]
+  user = {
+    id: 0
+    name: "Devin Finzer"
+    email: "dfinzer2@gmail.com"
+  }
   $httpBackend.whenGET('apps/apps').respond(apps)
   $httpBackend.whenGET('apps/0').respond(apps[0])
   $httpBackend.whenGET('apps/1').respond(apps[1])
-  # TODO: Mock backend.
+  $httpBackend.whenGET('users/0').respond(user)
   $httpBackend.whenGET().passThrough()
 )
