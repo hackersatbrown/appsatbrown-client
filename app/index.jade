@@ -8,7 +8,7 @@ html(lang='en')
     meta(name='author', content='')
     title(ng-bind-template='{{pageTitle}}')
     link(rel='stylesheet', href='/css/app.css')
-    //-script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
+    script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js')
     //if lte IE 7
       script(src='http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js')
     //if lte IE 8
@@ -29,16 +29,18 @@ html(lang='en')
               span.icon-bar
               span.icon-bar
               span.icon-bar
-            a(href='/').brand Angular Brunch Seed
+            a(href='/').brand Apps at Brown
             .nav-collapse
               div(ng-include="'/partials/nav.html'")
-      .container.main-content
-        div(ng-view)
-        div Angular Brunch seed app: v<span app-version></span>
+      .container-fluid.main-content
+        .row-fluid
+          .span3
+          .span9.well
+            div(ng-view)
       .push
 
     footer.footer
       .container
         p
           small
-            a(href='https://github.com/scotch/angular-brunch-seed') angular-brunch-seed | source
+            a(href='/') apps at brown | copyright 2013

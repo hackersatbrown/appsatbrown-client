@@ -1,0 +1,11 @@
+
+<div ng-app="ng-app">
+  <h2>Apps</h2>
+  <div ng-controller="AppCtrl">
+    <ul class="unstyled">
+      <li ng-repeat="app in apps">
+        <label class="checkbox inline">{{app.name}} - {{app.description}}</label>
+      </li>
+    </ul>
+  </div>
+</div>

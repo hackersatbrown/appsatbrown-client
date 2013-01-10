@@ -7,7 +7,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <title ng-bind-template="{{pageTitle}}"></title>
-    <link rel="stylesheet" href="/css/app.css"><!--[if lte IE 7]>
+    <link rel="stylesheet" href="/css/app.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script><!--[if lte IE 7]>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/json2/20110223/json2.js"></script><![endif]--><!--[if lte IE 8]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <script>
@@ -24,22 +25,26 @@
       <div class="navbar navbar-static-top">
         <div class="navbar-inner">
           <div class="container">
-            <button data-toggle="collapse" data-target=".nav-collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="brand">Angular Brunch Seed</a>
+            <button data-toggle="collapse" data-target=".nav-collapse" class="btn btn-navbar"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="/" class="brand">Apps at Brown</a>
             <div class="nav-collapse">
               <div ng-include="'/partials/nav.html'"></div>
             </div>
           </div>
         </div>
       </div>
-      <div class="container main-content">
-        <div ng-view></div>
-        <div>Angular Brunch seed app: v<span app-version></span></div>
+      <div class="container-fluid main-content">
+        <div class="row-fluid">
+          <div class="span3"></div>
+          <div class="span9 well">
+            <div ng-view></div>
+          </div>
+        </div>
       </div>
       <div class="push"></div>
     </div>
     <footer class="footer">
       <div class="container">
-        <p><small><a href="https://github.com/scotch/angular-brunch-seed">angular-brunch-seed | source</a></small></p>
+        <p><small><a href="/">apps at brown | copyright 2013</a></small></p>
       </div>
     </footer>
   </body>

@@ -34,52 +34,17 @@ angular.module('app.controllers', [])
       return ''
 ])
 
-.controller('MyCtrl1', [
-  '$scope'
-
-($scope) ->
-  $scope.onePlusOne = 2
-])
-
-.controller('MyCtrl2', [
-  '$scope'
-
-($scope) ->
-  $scope
-])
-
-.controller('TodoCtrl', [
+.controller('AppCtrl', [
   '$scope'
 
 ($scope) ->
 
-  $scope.todos = [
-    text: "learn angular"
-    done: true
+  $scope.apps = [
+    name: "Convos"
+    description: "Sketchy phone app."
   ,
-    text: "build an angular app"
-    done: false
+    name: "Best of Brown"
+    description: "App for finding good courses"
   ]
-
-  $scope.addTodo = ->
-    $scope.todos.push
-      text: $scope.todoText
-      done: false
-
-    $scope.todoText = ""
-
-  $scope.remaining = ->
-    count = 0
-    angular.forEach $scope.todos, (todo) ->
-      count += (if todo.done then 0 else 1)
-
-    count
-
-  $scope.archive = ->
-    oldTodos = $scope.todos
-    $scope.todos = []
-    angular.forEach oldTodos, (todo) ->
-      $scope.todos.push todo  unless todo.done
-
 ])
 
