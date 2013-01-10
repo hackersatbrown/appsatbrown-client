@@ -46,9 +46,9 @@ App.run(($httpBackend) ->
     name: "Best of Brown"
     description: "App for finding good courses"
   ]
-  $httpBackend.whenGET('apps/apps.json').respond(apps)
-  $httpBackend.whenGET('apps/0.json').respond(apps[0])
-  $httpBackend.whenGET('apps/1.json').respond(apps[1])
+  $httpBackend.whenGET('apps/apps').respond(apps)
+  $httpBackend.whenGET('apps/0').respond(apps[0])
+  $httpBackend.whenGET('apps/1').respond(apps[1])
   # TODO: Mock backend.
   $httpBackend.whenGET().passThrough()
 )
