@@ -21,6 +21,10 @@ App.config([
     .when('/apps', {templateUrl: '/partials/apps.html'})
     .when('/apps/:appId', {templateUrl: '/partials/app-detail.html'})
     .when('/developer/:userId', {templateUrl: '/partials/developer.html'})
+    .when('/developer/:userId/:appId'
+      {templateUrl: '/partials/developer-app-edit.html'})
+    .when('/developer/:userId/new'
+      {templateUrl: '/partials/developer-app-new.html'})
 
     # Catch all
     .otherwise({redirectTo: '/apps'})

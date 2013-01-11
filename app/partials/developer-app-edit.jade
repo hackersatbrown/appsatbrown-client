@@ -1,0 +1,12 @@
+#need to make focus change when done with one block
+div(ng-controller='AppDetailCtrl')
+  form
+    | App Name: 
+    p
+    input(type="text", id='app_name', value='{{app.name}}') 
+    p
+    | App Description:
+    p
+    textarea(id='app_description'){{app.description}}
+    p
+    input(type="Submit", id='submit', value='Save') 
