@@ -66,13 +66,18 @@ angular.module('app.controllers', [])
   '$scope',
   '$routeParams',
   'App',
+  'User',
 ($scope, $routeParams, App) ->
   $scope.app = App.get({appId: $routeParams.appId}, (app) ->
     $scope.app = app
   )
-$scope.save = ($scope) ->
-  $scope.app.$edit()
-  window.location="/developer/:userId"
-$scope.cancel= () ->
-  window.location="/developer/:userId"
+($scope, $routeParams, User) ->
+  $scope.user = User.get({userId: $routeParams.userId}, (user) ->
+    $scope.user = user
+  )
+  $scope.save = ($scope) ->
+    $scope.app.$edit()
+    window.location="#/developer/:userId"
+  $scope.cancel= () ->
+    window.location="#/developer/:userId"
 ])
