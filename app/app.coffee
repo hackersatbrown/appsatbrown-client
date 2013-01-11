@@ -37,16 +37,16 @@ App.config(($provide) ->
 # Define our fake backend.
 App.run(($httpBackend) ->
   apps = [
-    id: 0
+    id: "0"
     name: "Convos"
     description: "Sketchy phone app."
   ,
-    id: 1
+    id: "1"
     name: "Best of Brown"
     description: "App for finding good courses"
   ]
   user = {
-    id: 0
+    id: "0"
     name: "Devin Finzer"
     email: "dfinzer2@gmail.com"
     apps: apps

@@ -3,7 +3,7 @@
 ### Sevices ###
 
 angular.module('app.services', ['ngResource'])
-  .factory('App', ($resource) ->
+  .factory('Apps', ($resource) ->
     return $resource('apps/:appId', {}, {
       query: {method:'GET', params:{appId:'apps'}, isArray:true}
     })

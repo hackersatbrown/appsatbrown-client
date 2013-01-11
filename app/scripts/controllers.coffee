@@ -36,18 +36,18 @@ angular.module('app.controllers', [])
 
 .controller('AppsCtrl', [
   '$scope',
-  'App',
+  'Apps',
   
-($scope, App) ->
-  $scope.apps = App.query()
+($scope, Apps) ->
+  $scope.apps = Apps.query()
 ])
 
 .controller('AppDetailCtrl', [
   '$scope',
   '$routeParams',
-  'App',
-($scope, $routeParams, App) ->
-  $scope.app = App.get({appId: $routeParams.appId}, (app) ->
+  'Apps',
+($scope, $routeParams, Apps) ->
+  $scope.app = Apps.get({appId: $routeParams.appId}, (app) ->
     $scope.app = app
   )
 ])
