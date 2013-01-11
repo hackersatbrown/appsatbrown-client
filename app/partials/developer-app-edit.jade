@@ -1,12 +1,27 @@
-#need to make focus change when done with one block
-div(ng-controller='AppDetailCtrl')
-  form
+//need to make focus change when done with one block
+//need to make app names invalid if already used
+//need to disable save if form is unchanged
+
+div(ng-controller='DeveloperAppEditCtrl')
+  form(name="edit_form", novalidate class="css-form")
     | App Name: 
     p
-    input(type="text", id='app_name', value='{{app.name}}') 
+    input(type="text", name='app_name', value='{{app.name}}', ng-model='app.name', required) 
     p
     | App Description:
     p
-    textarea(id='app_description'){{app.description}}
+    textarea(name='app_description',  ng-model='app.description', required){{app.description}}
     p
-    input(type="Submit", id='submit', value='Save') 
+    span(ng-show="edit_form.app_name.$error.required") Please provide an name for your app.
+    p
+    button(ng-click="save(app)", id='save', ng-disabled="edit_form.$invalid") Save 
+    button(ng-click="cancel()", id='cancel') Cancel
+
+    style(type="text/css")
+      .css-form input.ng-invalid.ng-dirty {
+        background-color: #FA787E;
+      }
+    
+      .css-form input.ng-valid.ng-dirty {
+        background-color: #FFFFFF;
+      }

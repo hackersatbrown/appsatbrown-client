@@ -10,11 +10,11 @@ div(ng-controller='DeveloperProfileCtrl')
           label(class='checkbox inline')
             {{app.name}}
         p
-        a(href='#/developer/{{user.id}}/{{app.id}}')
+        a(href='#/developer/{{user.id}}/apps/{{app.id}}')
           label(class='checkbox inline')
             p edit above
       li
         p
-        a(href='#/developer/{{user.id}}/new')
+        a(href='#/developer/apps/{{user.id}}/new')
           label(class='checkbox inline')
             p create new
