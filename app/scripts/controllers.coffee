@@ -34,20 +34,30 @@ angular.module('app.controllers', [])
       return ''
 ])
 
-.controller('AppCtrl', [
+.controller('AppsCtrl', [
   '$scope',
-  'App'
-
-($scope, App) ->
-  $scope.apps = App.query()
+  'Apps',
+  
+($scope, Apps) ->
+  $scope.apps = Apps.query()
 ])
 
 .controller('AppDetailCtrl', [
   '$scope',
   '$routeParams',
-  'App',
-($scope, $routeParams, App) ->
-  $scope.app = App.get({appId: $routeParams.appId}, (app) ->
+  'Apps',
+($scope, $routeParams, Apps) ->
+  $scope.app = Apps.get({appId: $routeParams.appId}, (app) ->
     $scope.app = app
+  )
+])
+
+.controller('DeveloperProfileCtrl', [
+  '$scope',
+  '$routeParams',
+  'User',
+($scope, $routeParams, User) ->
+  $scope.user = User.get({userId: $routeParams.userId}, (user) ->
+    $scope.user = user
   )
 ])
